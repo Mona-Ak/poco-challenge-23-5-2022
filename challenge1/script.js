@@ -34,7 +34,7 @@ box.addEventListener('keypress', rate =>{
             text.textContent = '😁';
             break;
         default:
-            text.textContent = 'please add number between 1 and  5'
+            text.textContent = ` you pressed the ( ${rate.key} ) please add number between 1 and  5 🤬`
             break;
     }
 })
