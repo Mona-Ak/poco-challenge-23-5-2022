@@ -13,4 +13,29 @@ box.addEventListener("focusout", function(){
 
 // Write your code here 👇
 
+box.addEventListener('keypress', rate =>{
+    let rateNum = parseInt(rate.key);
+    console.log(rateNum)
+    
+    switch(rateNum){
+        case 1 :
+            text.textContent = '🤬';
+            break;
+        case 2 :
+            text.textContent = '☹️';
+            break;
+        case 3 :
+            text.textContent = '😐';
+            break;
+        case 4 :
+            text.textContent = '🙂';
+            break;
+        case 5 :
+            text.textContent = '😁';
+            break;
+        default:
+            text.textContent = 'please add number between 1 and  5'
+            break;
+    }
+})
 
