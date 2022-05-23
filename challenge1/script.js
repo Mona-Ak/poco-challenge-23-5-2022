@@ -20,21 +20,27 @@ box.addEventListener('keypress', rate =>{
     switch(rateNum){
         case 1 :
             text.textContent = '🤬';
+            text.id = 'emoji-container';
             break;
         case 2 :
             text.textContent = '☹️';
+            text.id = 'emoji-container';
             break;
         case 3 :
             text.textContent = '😐';
+            text.id = 'emoji-container';
             break;
         case 4 :
             text.textContent = '🙂';
+            text.id = 'emoji-container';
             break;
         case 5 :
             text.textContent = '😁';
+            text.id = 'emoji-container';
             break;
         default:
-            text.textContent = ` you pressed the ( ${rate.key} ) please add number between 1 and  5 🤬`
+            text.textContent = ` you pressed the ( ${rate.key} ) please add number between 1 and  5 🤬`;
+            text.id = 'help-text';
             break;
     }
 })
