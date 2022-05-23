@@ -11,75 +11,57 @@ solveButton.addEventListener("click", function(e) {
 
     let equationComponent = document.createElement('p');
     equationComponent.classList.add('equation-component');
-    
     let sepVal = equationField.value.split(" ");
     
-    
+    // seperating the numbers from operation
     let filterNum = sepVal.filter( (item,index)=>{
         if(index % 2 == 0){
             return item;
         }
     })
     
+    // convert the type of string to the number
     let convertNum = filterNum.map(item => {
         return parseInt(item)
     })
     
+    let total = 0;
+    
+    if(sepVal.includes('+')){
+        convertNum.reduce( (a , b) => {
+            console.log(a + b)
+            equationComponent.textContent = a + b;
+        })
+    }
 
-    // for(let i = 0; i < filterNum.length; i++){
-        if(sepVal.includes('+')){
-            convertNum.reduce( (a , b) => {
-                console.log(a + b)
-                equationComponent.textContent = a + b;
-            })
-        }
-        // console.log(convertNum)
-        
-        if(sepVal.includes('-')){
-            convertNum.reduce((a, b)=> {
-                console.log(a - b);
-                equationComponent.textContent = a - b;
-            })    
-        }
+    // console.log(convertNum)
+    
+    if(sepVal.includes('-')){
+        convertNum.reduce((a, b)=> {
+            console.log(a - b);
+            equationComponent.textContent = a - b;
+        })    
+    }
 
-        if(sepVal.includes('*')){
-            convertNum.reduce( (a , b)=> {
-                console.log(a * b);
-                equationComponent.textContent += a * b;
+    if(sepVal.includes('*')){
+        convertNum.reduce( (a , b)=> {
+            console.log(a * b);
+            equationComponent.textContent += a * b;
 
-            });
-        }
+        });
+    }
 
-        if(sepVal.includes("/")){
-            convertNum.reduce((a,b)=> {
-                console.log( a / b);
-                equationComponent.textContent = a / b;
-            })
-        }
+    if(sepVal.includes("/")){
+        convertNum.reduce((a,b)=> {
+            console.log( a / b);
+            equationComponent.textContent = a / b;
+        })
+    }
 
         solutionDisplay.appendChild(equationComponent);
 
 })
-// let myArr = [50, 30 , 2];
 
-// for(let i = 0;i < myArr.length; i++ ){
-//     // let moo -= myArr[i];
-//     // let moon = myArr[i]--
-//     // console.log(moon)
-//     let me = 6;
-//     let you = me; 
-// }
-
-//  totalPrice = [60,40];
-
-// var total = 0;
-
-//    for (var i  = 0; i < totalPrice.length; i++){
-
-//       total  -= totalPrice[i];
-
-//       console.log(total)
-//    }
 
 
 
